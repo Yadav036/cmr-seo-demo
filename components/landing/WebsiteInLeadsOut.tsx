@@ -301,10 +301,10 @@ function StepTabRow({
       )}
     >
       <div className={cn(
-        'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[11px] font-medium transition-all duration-300',
+        'relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[11px] font-medium transition-all duration-300',
         active
-          ? 'border-[#5747ff]/60 bg-[#5747ff]/20 text-[#8b7fff]'
-          : 'border-white/10 bg-white/[0.04] text-white/30',
+          ? 'border-[#5747ff]/60 bg-black text-[#8b7fff]'
+          : 'border-white/10 bg-black text-white/30',
       )}>
         {n}
       </div>
@@ -382,13 +382,19 @@ export function WebsiteInLeadsOut() {
           </h2>
         </div>
 
-        {/* Progress line + tabs */}
+        {/* Progress line + tabs
+            Circle center x = px-3 (12px) + w-8/2 (16px) = 28px = left-7
+            Line runs circle-center → circle-center (top-7 / bottom-7) */}
         <div className='relative flex flex-col gap-1'>
-          {/* Active progress line */}
-          <div className='pointer-events-none absolute left-[19px] top-4 bottom-4 w-px bg-white/[0.06]' aria-hidden />
+          <div
+            className='pointer-events-none absolute left-7 top-7 bottom-7 w-px -translate-x-1/2 bg-white/[0.06]'
+            aria-hidden
+          />
           <motion.div
-            className='pointer-events-none absolute left-[19px] top-4 w-px bg-gradient-to-b from-[#5747ff] to-[#8b7fff]'
-            style={{ height: `${((activeIndex + 0.5) / WEBSITE_IN_LEADS_STEPS.length) * 100}%` }}
+            className='pointer-events-none absolute left-7 top-7 w-px -translate-x-1/2 origin-top bg-gradient-to-b from-[#5747ff] to-[#8b7fff]'
+            animate={{
+              height: `calc((100% - 3.5rem) * ${activeIndex / Math.max(WEBSITE_IN_LEADS_STEPS.length - 1, 1)})`,
+            }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
             aria-hidden
           />
