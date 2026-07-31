@@ -7,7 +7,7 @@ import { SiteFrame } from '@/components/SiteFrame';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Cold Mail Reseller – White-Label Email Infrastructure for Resellers',
+  title: 'Cold Mail Reseller - White-Label Email Infrastructure for Resellers',
   description:
     'Launch your own white-label cold email infrastructure business. Help your clients land in the inbox every time while building predictable, recurring revenue for yourself.',
   icons: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://coldmailreseller.com',
-    title: 'Cold Mail Reseller – White-Label Email Infrastructure for Resellers',
+    title: 'Cold Mail Reseller - White-Label Email Infrastructure for Resellers',
     description:
       'Launch your own white-label cold email infrastructure business. Help your clients land in the inbox every time while building predictable, recurring revenue for yourself.',
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cold Mail Reseller – White-Label Email Infrastructure for Resellers',
+    title: 'Cold Mail Reseller - White-Label Email Infrastructure for Resellers',
     description:
       'Launch your own white-label cold email infrastructure business. Help your clients land in the inbox every time while building predictable, recurring revenue for yourself.',
     images: ['/cmr/cmr-full-logo.png'],

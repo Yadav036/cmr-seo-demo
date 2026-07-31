@@ -8,23 +8,23 @@ import { cn } from '@/lib/utils'
 const FAQ_ITEMS = [
   {
     q: 'What is Cold Mail Reseller?',
-    a: 'Cold Mail Reseller is a white-label email infrastructure platform that lets you launch your own cold email service under your brand. We handle all the complex technical infrastructure—domain setup, deliverability, mailbox provisioning—while you focus on selling and scaling.',
+    a: "Cold Mail Reseller is email infrastructure you can run under your own brand. You get a full REST API and a white-label dashboard to provision domains, DNS, warmups, pre-warmups, and mailboxes, then deliver that stack to your clients as your product.",
   },
   {
     q: 'How much can I earn as a Cold Mail Reseller Partner?',
-    a: "Your earnings scale directly with the number of mailboxes you manage and your pricing. Partners typically earn $5–$15 profit per mailbox per month. At 100 mailboxes and $8 profit each, that's $800/month or $9,600/year in recurring revenue.",
+    a: 'Partners typically earn 30-50% margins on each mailbox. With flexible pricing, you set your own rates while staying competitive, backed by infrastructure you control through our API and white-label dashboard.',
   },
   {
     q: 'Do I need technical expertise to get started?',
-    a: "Not at all. Our platform is built for simplicity. We handle DNS configuration, IP warm-up, deliverability optimization, and everything technical. You just sign up, add your branding, set your pricing, and start selling.",
+    a: 'No. Automated setup handles DKIM, SPF, and DMARC for you. Prefer to integrate yourself? Use the API. Prefer a UI? Use the white-label dashboard. Either path gets you live without deep infra expertise.',
   },
   {
     q: 'How does White Labeling work?',
-    a: 'White labeling means your clients see your brand—your logo, your domain, your name—not ours. Cold Mail Reseller operates entirely behind the scenes. You set up your storefront, customize the interface, and all credit goes to your business.',
+    a: 'Customize the entire experience with your brand, including the white-label dashboard, documentation, and support materials. Your clients only see your brand. You can also build on top of our APIs so every flow stays native to your product.',
   },
   {
     q: 'What support do I receive as a Cold Mail Reseller Partner?',
-    a: "You get round-the-clock support from our dedicated partner success team, onboarding resources, marketing materials, and continuous platform improvements. We're invested in your success because when you grow, we grow.",
+    a: 'Partners get dedicated support, marketing materials, full API documentation, white-label dashboard guidance, and regular training so you can ship and scale with confidence.',
   },
 ] as const
 
@@ -60,7 +60,7 @@ export function CmrFaqAccordion() {
             <div
               className={cn(
                 'overflow-hidden transition-all duration-300',
-                isOpen ? 'max-h-48' : 'max-h-0',
+                isOpen ? 'max-h-64' : 'max-h-0',
               )}
             >
               <p className='px-6 pb-5 text-sm leading-relaxed text-white/55'>{a}</p>

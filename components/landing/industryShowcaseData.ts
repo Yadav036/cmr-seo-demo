@@ -81,7 +81,7 @@ export const INDUSTRIES: IndustryConfig[] = [
     Icon: GraduationCap,
     title: 'EdTech Companies',
     description:
-      'District and university buying windows are tight. We surface curriculum and IT buyers when budgets open—without bloating your headcount.',
+      'District and university buying windows are tight. We surface curriculum and IT buyers when budgets open, without bloating your headcount.',
     whyHeading: 'Why Cold Mail Reseller works',
     bullets: [
       'Territory-aware outreach to districts and institutions',

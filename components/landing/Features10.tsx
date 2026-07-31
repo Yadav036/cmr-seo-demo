@@ -41,14 +41,14 @@ function InboxVisual() {
   return (
     <div className='flex h-full flex-col items-center justify-center gap-4 py-2'>
       <div className='flex flex-col items-center'>
-        <p className='font-general-sans text-[3.5rem] font-semibold leading-none tracking-[-0.04em] text-white'>97.3</p>
+        <p className='font-general-sans text-[3.5rem] font-semibold leading-none tracking-[-0.04em] text-white'>99.1</p>
         <p className='font-mono text-xs text-white/30'>% inbox rate</p>
       </div>
       <div className='w-full space-y-1.5'>
         {[
-          { label: 'Google Workspace', pct: 98 },
-          { label: 'Microsoft 365', pct: 97 },
-          { label: 'Other providers', pct: 94 },
+          { label: 'Google Workspace', pct: 99 },
+          { label: 'Microsoft 365', pct: 99 },
+          { label: 'Other providers', pct: 97 },
         ].map(({ label, pct }) => (
           <div key={label} className='flex items-center gap-2'>
             <span className='w-28 shrink-0 font-mono text-[9px] text-white/30'>{label}</span>
@@ -160,42 +160,42 @@ export function Features10() {
   return (
     <div className='mt-10 grid grid-cols-1 gap-3 md:grid-cols-6'>
 
-      {/* 1 — White-label: 4 cols */}
+      {/* 1 - White-label: 4 cols */}
       <WobbleCard className='md:col-span-4'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>White-label ready</p>
-        <p className='mb-5 text-sm text-white/50'>Launch under your brand — logo, domain, and pricing fully customized.</p>
+        <p className='mb-5 text-sm text-white/50'>Launch under your brand - logo, domain, and pricing fully customized.</p>
         <WhiteLabelVisual />
       </WobbleCard>
 
-      {/* 2 — Inbox: 2 cols, tall */}
+      {/* 2 - Inbox: 2 cols, tall */}
       <WobbleCard className='md:col-span-2 md:row-span-2'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>Inbox deliverability</p>
         <p className='mb-5 text-sm text-white/50'>Google Workspace & M365 infrastructure that lands in the primary inbox.</p>
         <InboxVisual />
       </WobbleCard>
 
-      {/* 3 — Provider matching: 2 cols */}
+      {/* 3 - Provider matching: 2 cols */}
       <WobbleCard className='md:col-span-2'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>Provider matching</p>
-        <p className='mb-4 text-sm text-white/50'>Google to Google, M365 to M365 — maximum deliverability.</p>
+        <p className='mb-4 text-sm text-white/50'>Google to Google, M365 to M365 - maximum deliverability.</p>
         <ProviderVisual />
       </WobbleCard>
 
-      {/* 4 — Scales: 2 cols */}
+      {/* 4 - Scales: 2 cols */}
       <WobbleCard className='md:col-span-2'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>Scales with you</p>
         <p className='mb-4 text-sm text-white/50'>From 10 to 10,000 mailboxes as fast as you sell.</p>
         <ScalesVisual />
       </WobbleCard>
 
-      {/* 5 — Margins: 4 cols */}
+      {/* 5 - Margins: 4 cols */}
       <WobbleCard className='md:col-span-4'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>Set your own margins</p>
         <p className='mb-5 text-sm text-white/50'>You control the pricing. Keep every dollar above our base cost.</p>
         <MarginsVisual />
       </WobbleCard>
 
-      {/* 6 — Support: 2 cols */}
+      {/* 6 - Support: 2 cols */}
       <WobbleCard className='md:col-span-2'>
         <p className='mb-1 text-[24px] font-general-sans font-medium text-white'>Partner-first support</p>
         <p className='mb-4 text-sm text-white/50'>Round-the-clock help from a team invested in your success.</p>

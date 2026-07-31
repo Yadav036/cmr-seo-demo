@@ -19,7 +19,7 @@ const CELL_ANIM = [
   '[animation:ib-loader-cell-3_0.8s_linear_infinite]',
 ] as const
 
-/** Loader runs 2s, then card rises — no two loaders at once within each group */
+/** Loader runs 2s, then card rises - no two loaders at once within each group */
 const LOADER_PHASE_S = 2
 
 function icpCardTimes(index: number) {
@@ -104,7 +104,7 @@ function IbLoader({ className }: { className?: string }) {
 
 // ── Sub-components ─────────────────────────────────────────
 
-/** Square green dot + uppercase label — matches Figma 636:738 header row */
+/** Square green dot + uppercase label - matches Figma 636:738 header row */
 function PanelSectionHeader({ label }: { label: string }) {
   return (
     <div
@@ -132,7 +132,7 @@ function PanelSectionHeader({ label }: { label: string }) {
   )
 }
 
-/** Single ICP row — Figma 636:742 */
+/** Single ICP row - Figma 636:742 */
 function IcpCard({
   title,
   size,
@@ -193,7 +193,7 @@ function IcpCard({
   )
 }
 
-/** Single lead row — Figma 636:844 */
+/** Single lead row - Figma 636:844 */
 function LeadCard({
   initials,
   name,
@@ -225,7 +225,7 @@ function LeadCard({
           } as CSSProperties
         }
       >
-        {/* Square initials avatar — Figma 644:1706 */}
+        {/* Square initials avatar - Figma 644:1706 */}
         <div
           style={{
             width: 42,
@@ -390,22 +390,22 @@ export function HeroLimeAnimation({
             <PanelSectionHeader label='3 ICP Found' />
             <div className='hl-ilist'>
               <IcpCard
-                title='SaaS founders of Series A–B'
-                size='20–100 employees'
+                title='SaaS founders of Series A-B'
+                size='20-100 employees'
                 briefcase={2}
                 building={13}
                 {...icpCardTimes(0)}
               />
               <IcpCard
                 title='VP of Marketing at B2B companies'
-                size='20–100 employees'
+                size='20-100 employees'
                 briefcase={3}
                 building={22}
                 {...icpCardTimes(1)}
               />
               <IcpCard
                 title='Head of Growth at PLG startups'
-                size='10–50 employees'
+                size='10-50 employees'
                 briefcase={5}
                 building={18}
                 {...icpCardTimes(2)}

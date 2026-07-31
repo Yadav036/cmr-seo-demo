@@ -8,7 +8,7 @@ export type B2BFeature = {
 export const B2B_FEATURES: readonly B2BFeature[] = [
   {
     title: 'White-label ready',
-    description: 'Launch under your brand—logo, domain, and pricing fully customized.',
+    description: 'Launch under your brand: logo, domain, and pricing fully customized.',
     imageSrc: '/landing/b2b-illustrations/enterprise-ready.png',
   },
   {
@@ -23,7 +23,7 @@ export const B2B_FEATURES: readonly B2BFeature[] = [
   },
   {
     title: 'Scales with you',
-    description: 'From 10 to 10,000 mailboxes—our platform grows as fast as you do.',
+    description: 'From 10 to 10,000 mailboxes. Our platform grows as fast as you do.',
     imageSrc: '/landing/b2b-illustrations/transparent.png',
   },
   {

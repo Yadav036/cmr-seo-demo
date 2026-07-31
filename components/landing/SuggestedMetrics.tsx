@@ -14,7 +14,7 @@ import {
 } from '@/lib/leadPricingMetrics'
 import { cn } from '@/lib/utils'
 
-/** Figma 644:1943 — “Suggested Metrics” block (pricing / leads section) */
+/** Figma 644:1943 - “Suggested Metrics” block (pricing / leads section) */
 
 function revealTileClass(visible: boolean) {
   return cn(
@@ -180,7 +180,7 @@ const doesNotCount = [
   { strong: 'Bounces / spam', text: ' Undeliverable or filtered' },
 ]
 
-/** Overlay — no layout space; dims page behind; dismiss on scroll or backdrop tap */
+/** Overlay - no layout space; dims page behind; dismiss on scroll or backdrop tap */
 export function QualifiedCriteriaPanel({
   open,
   onClose,

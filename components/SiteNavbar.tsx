@@ -1,12 +1,16 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { BookOpen, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Logo } from "@/components/svg/Logo";
-import { APP_GET_STARTED_URL, APP_LOGIN_URL } from "@/lib/appUrls";
+import {
+  APP_DOCS_URL,
+  APP_GET_STARTED_URL,
+  APP_LOGIN_URL,
+} from "@/lib/appUrls";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -86,6 +90,23 @@ export function SiteNavbar() {
           </nav>
 
           <div className="flex items-center gap-1.5">
+            <a
+              href={APP_DOCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-1.5 overflow-hidden border border-[#5747ff]/40 bg-[#5747ff]/10 px-3 py-2 font-mono text-sm leading-[1.4] tracking-[-0.02em] text-[#c4b5ff] transition-all hover:border-[#5747ff]/70 hover:bg-[#5747ff]/20 hover:text-white"
+              style={{ fontFeatureSettings: "'ss05' 1" }}
+            >
+              <span
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(105deg,transparent_40%,rgba(255,255,255,0.12)_50%,transparent_60%)] transition-transform duration-700 group-hover:translate-x-full"
+                aria-hidden
+              />
+              <BookOpen className="size-3.5 shrink-0" strokeWidth={1.75} />
+              Docs
+              <span className="rounded-sm bg-[#5747ff]/25 px-1 py-px text-[10px] font-medium uppercase tracking-wider text-[#8b7fff]">
+                API
+              </span>
+            </a>
             <Link
               href={APP_LOGIN_URL}
               className="bg-[color:var(--Neutral-300,#404040)] px-3 py-2 font-mono text-sm leading-[1.4] tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
@@ -148,6 +169,20 @@ export function SiteNavbar() {
           ))}
         </nav>
         <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-4">
+          <a
+            href={APP_DOCS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-1.5 border border-[#5747ff]/40 bg-[#5747ff]/10 px-3 py-2 font-mono text-sm text-[#c4b5ff]"
+            style={{ fontFeatureSettings: "'ss05' 1" }}
+            onClick={() => setMobileOpen(false)}
+          >
+            <BookOpen className="size-3.5" strokeWidth={1.75} />
+            Docs
+            <span className="rounded-sm bg-[#5747ff]/25 px-1 py-px text-[10px] font-medium uppercase tracking-wider text-[#8b7fff]">
+              API
+            </span>
+          </a>
           <Link
             href={APP_LOGIN_URL}
             className="bg-[color:var(--Neutral-300,#404040)] px-3 py-2 text-center font-mono text-sm text-white"
@@ -155,14 +190,6 @@ export function SiteNavbar() {
             onClick={() => setMobileOpen(false)}
           >
             Log In
-          </Link>
-          <Link
-            href={APP_GET_STARTED_URL}
-            className="bg-[color:var(--Neutral-300,#404040)] px-3 py-2 text-center font-mono text-sm text-white"
-            style={{ fontFeatureSettings: "'ss05' 1" }}
-            onClick={() => setMobileOpen(false)}
-          >
-            Book a Call
           </Link>
           <Link
             href={APP_GET_STARTED_URL}

@@ -23,7 +23,7 @@ export function CompareFaq({ className }: { className?: string }) {
           className='border border-[#303030] bg-[#030303]'
           data-node-id={item.id === 'qualified-lead' ? '653:2646' : item.id === 'control-sent' ? '653:2785' : undefined}
         >
-          {/* Trigger row — Figma 653:2739 */}
+          {/* Trigger row - Figma 653:2739 */}
           <AccordionPrimitive.Header className='flex'>
             <AccordionPrimitive.Trigger
               className={cn(
@@ -37,7 +37,7 @@ export function CompareFaq({ className }: { className?: string }) {
               <span className='min-w-0 flex-1'>
                 {item.question}
               </span>
-              {/* 24×24 plus icon — Figma 653:2740 */}
+              {/* 24×24 plus icon - Figma 653:2740 */}
               <span className='relative inline-flex size-6 shrink-0 items-center justify-center text-[#a3a3a3] transition-colors group-data-[state=open]:text-white'>
                 <Plus
                   className='size-6 transition-transform duration-200'

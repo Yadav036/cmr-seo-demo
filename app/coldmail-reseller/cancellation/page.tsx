@@ -7,7 +7,7 @@ import {
 } from '@/components/cmr/CmrLegalPage'
 
 export const metadata: Metadata = {
-  title: 'Cancellation Policy — Cold Mail Reseller',
+  title: 'Cancellation Policy - Cold Mail Reseller',
   description:
     'Cancellation and refund policy for Cold Mail Reseller by Outbox Labs Inc.',
 }

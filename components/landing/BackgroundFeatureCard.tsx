@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 
-/** Figma 654:3033 — #303030 border; illustration from raster assets */
+/** Figma 654:3033 - #303030 border; illustration from raster assets */
 type BackgroundFeatureCardProps = {
   title: string
   description: string

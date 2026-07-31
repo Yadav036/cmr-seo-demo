@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { UserCheck, Palette, Send, TrendingUp } from 'lucide-react'
+import { Code2, Flame, Zap, Database } from 'lucide-react'
 import { WEBSITE_IN_LEADS_STEPS } from '@/components/landing/websiteInLeadsOutData'
 import { cn } from '@/lib/utils'
 
@@ -10,7 +10,15 @@ const STICKY_TOP = 96
 
 /* ── Visual panels ─────────────────────────────────────── */
 
-function SignUpPanel() {
+function ApiPanel() {
+  const lines = [
+    { c: 'text-white/25', t: 'POST /api/v1/integration/orders' },
+    { c: 'text-[#8b7fff]', t: '{' },
+    { c: 'text-white/55', t: '  "provider": "google",' },
+    { c: 'text-white/55', t: '  "mailboxes": 50,' },
+    { c: 'text-white/55', t: '  "warmup": true' },
+    { c: 'text-[#8b7fff]', t: '}' },
+  ]
   return (
     <div className='relative flex h-full w-full flex-col justify-between p-7 overflow-hidden'>
       <div
@@ -20,35 +28,24 @@ function SignUpPanel() {
       />
       <div className='relative flex items-center gap-3'>
         <div className='flex h-8 w-8 items-center justify-center rounded-full border border-[#5747ff]/40 bg-[#5747ff]/15'>
-          <UserCheck className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
+          <Code2 className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
         </div>
-        <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>Partner Portal</span>
+        <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>REST API</span>
       </div>
 
-      <div className='relative space-y-2.5'>
-        {['Company Name', 'Work Email', 'Password'].map((label, i) => (
-          <motion.div
-            key={label}
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      <div className='relative rounded-xl border border-white/[0.08] bg-black/40 p-4 font-mono text-[11px] leading-relaxed'>
+        {lines.map(({ c, t }, i) => (
+          <motion.p
+            key={t}
+            initial={{ opacity: 0, x: -6 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 + i * 0.12, duration: 0.5, ease: 'easeOut' }}
-            className='rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3'
+            transition={{ delay: 0.15 + i * 0.08, duration: 0.35 }}
+            className={c}
           >
-            <p className='font-mono text-[9px] uppercase tracking-wider text-white/25'>{label}</p>
-            <div className='mt-1.5 h-2 rounded-full' style={{ width: `${[55, 72, 40][i]}%`, background: 'rgba(255,255,255,0.15)' }} />
-          </motion.div>
+            {t}
+          </motion.p>
         ))}
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.4 }}
-          className='rounded-xl bg-gradient-to-r from-[#5747ff] to-[#7c6fff] py-3 text-center shadow-lg shadow-[#5747ff]/25'
-        >
-          <span className='font-general-sans text-sm font-medium text-white'>Get Started — Free</span>
-        </motion.div>
       </div>
 
       <div className='relative flex items-center gap-2'>
@@ -57,83 +54,135 @@ function SignUpPanel() {
           transition={{ duration: 2, repeat: Infinity }}
           className='h-1.5 w-1.5 rounded-full bg-emerald-400'
         />
-        <span className='font-mono text-[10px] text-white/35'>Setup complete in under 60 seconds</span>
+        <span className='font-mono text-[10px] text-white/35'>200 OK · order queued in ~120ms</span>
       </div>
     </div>
   )
 }
 
-function CustomizePanel() {
+function WarmupPanel() {
+  const settings = [
+    { label: 'Daily ramp', value: '+5 / day' },
+    { label: 'Reply rate', value: '28%' },
+    { label: 'Status', value: 'Active' },
+  ]
   return (
     <div className='relative flex h-full w-full flex-col justify-between p-7 overflow-hidden'>
       <div
         className='pointer-events-none absolute inset-0'
-        style={{ background: 'radial-gradient(ellipse 70% 50% at 30% 20%, rgba(87,71,255,0.10), transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse 70% 50% at 30% 20%, rgba(251,146,60,0.10), transparent 65%)' }}
         aria-hidden
       />
-      <div className='relative flex items-center gap-3'>
-        <div className='flex h-8 w-8 items-center justify-center rounded-full border border-[#5747ff]/40 bg-[#5747ff]/15'>
-          <Palette className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
+      <div className='relative flex items-center justify-between'>
+        <div className='flex items-center gap-3'>
+          <div className='flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/40 bg-orange-400/15'>
+            <Flame className='h-4 w-4 text-orange-300' strokeWidth={1.5} />
+          </div>
+          <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>Mailbox Warmup</span>
         </div>
-        <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>White-Label Config</span>
+        <motion.span
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className='rounded-full bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400'
+        >
+          ON
+        </motion.span>
       </div>
 
       <div className='relative space-y-3'>
-        {/* Brand card */}
-        <motion.div
-          initial={{ opacity: 0, x: -8 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className='flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.04] p-3.5'
-        >
-          <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#5747ff]/40 to-[#5747ff]/10 border border-[#5747ff]/30'>
-            <span className='font-mono text-[11px] font-bold text-[#8b7fff]'>YB</span>
+        <div>
+          <div className='mb-2 flex justify-between'>
+            <span className='font-mono text-[9px] uppercase tracking-wider text-white/25'>Warmup progress</span>
+            <span className='font-mono text-[9px] text-white/25'>Day 9 / 14</span>
           </div>
-          <div>
-            <div className='h-2 w-24 rounded-full bg-white/25' />
-            <div className='mt-1.5 h-1.5 w-32 rounded-full bg-white/10' />
+          <div className='h-1.5 overflow-hidden rounded-full bg-white/[0.06]'>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '64%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.1, delay: 0.2, ease: 'easeOut' }}
+              className='h-full rounded-full bg-gradient-to-r from-orange-400 to-[#5747ff]'
+            />
           </div>
-          <div className='ml-auto rounded-full bg-emerald-400/10 px-2 py-0.5'>
-            <span className='font-mono text-[9px] text-emerald-400'>✓ Live</span>
-          </div>
-        </motion.div>
+        </div>
 
-        {/* Palette */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.35, duration: 0.4 }}
-          className='flex items-center gap-2'
-        >
-          <span className='font-mono text-[9px] text-white/25 uppercase tracking-wider'>Your palette</span>
-          <div className='flex gap-1.5'>
-            {['#5747ff', '#0ea5e9', '#f0f0ff', '#1a1a2e'].map((c, i) => (
-              <motion.div
-                key={c}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.06, type: 'spring', stiffness: 400 }}
-                className='h-5 w-5 rounded-full border-2 border-white/10'
-                style={{ background: c }}
-              />
-            ))}
-          </div>
-        </motion.div>
+        {settings.map(({ label, value }, i) => (
+          <motion.div
+            key={label}
+            initial={{ opacity: 0, y: 6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 + i * 0.1, duration: 0.4 }}
+            className='flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5'
+          >
+            <span className='font-mono text-[10px] text-white/35'>{label}</span>
+            <span className='font-mono text-[11px] text-white/70'>{value}</span>
+          </motion.div>
+        ))}
+      </div>
 
-        {/* Domain */}
-        <motion.div
-          initial={{ opacity: 0, y: 6 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      <div className='relative flex items-center gap-2'>
+        <motion.span
+          animate={{ scale: [1, 1.4, 1], opacity: [1, 0.4, 1] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          className='h-1.5 w-1.5 rounded-full bg-orange-400'
+        />
+        <span className='font-mono text-[10px] text-white/35'>Toggle & tune via API anytime</span>
+      </div>
+    </div>
+  )
+}
+
+function PrewarmupPanel() {
+  const batches = [
+    { name: 'Google · US', qty: '40 ready', age: '21d warmed' },
+    { name: 'M365 · EU', qty: '25 ready', age: '18d warmed' },
+    { name: 'Google · UK', qty: '15 ready', age: '30d warmed' },
+  ]
+  return (
+    <div className='relative flex h-full w-full flex-col justify-between p-7 overflow-hidden'>
+      <div
+        className='pointer-events-none absolute inset-0'
+        style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 30%, rgba(87,71,255,0.12), transparent 65%)' }}
+        aria-hidden
+      />
+      <div className='relative flex items-center justify-between'>
+        <div className='flex items-center gap-3'>
+          <div className='flex h-8 w-8 items-center justify-center rounded-full border border-[#5747ff]/40 bg-[#5747ff]/15'>
+            <Zap className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
+          </div>
+          <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>Pre-Warmup Pool</span>
+        </div>
+        <motion.span
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.4 }}
-          className='flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5'
+          transition={{ delay: 0.3, type: 'spring', stiffness: 300 }}
+          className='font-general-sans text-2xl font-semibold text-[#8b7fff]'
         >
-          <div className='h-1.5 w-1.5 rounded-full bg-[#5747ff]' />
-          <span className='font-mono text-[10px] text-white/45'>yourbrand.com/dashboard</span>
-        </motion.div>
+          80
+        </motion.span>
+      </div>
+
+      <div className='relative space-y-1.5'>
+        {batches.map(({ name, qty, age }, i) => (
+          <motion.div
+            key={name}
+            initial={{ opacity: 0, x: -8 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 + i * 0.1, duration: 0.4 }}
+            className='flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2.5'
+          >
+            <div className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5747ff]/25'>
+              <Zap className='h-3 w-3 text-[#8b7fff]' strokeWidth={1.5} />
+            </div>
+            <span className='flex-1 font-mono text-[11px] text-white/55'>{name}</span>
+            <span className='font-mono text-[10px] text-emerald-400/80'>{qty}</span>
+            <span className='font-mono text-[10px] text-white/25'>{age}</span>
+          </motion.div>
+        ))}
       </div>
 
       <div className='relative flex items-center gap-2'>
@@ -142,88 +191,18 @@ function CustomizePanel() {
           transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
           className='h-1.5 w-1.5 rounded-full bg-emerald-400'
         />
-        <span className='font-mono text-[10px] text-white/35'>Custom domain live in minutes</span>
+        <span className='font-mono text-[10px] text-white/35'>Reputation baked in before handoff</span>
       </div>
     </div>
   )
 }
 
-function SellPanel() {
-  const clients = [
-    { name: 'Sarah C.', mboxes: '50 mailboxes', initials: 'S' },
-    { name: 'Mike T.', mboxes: '30 mailboxes', initials: 'M' },
-    { name: 'Ana S.', mboxes: '20 mailboxes', initials: 'A' },
+function ManagePanel() {
+  const records = [
+    { type: 'MX', value: 'aspmx.l.google.com', ttl: '3600' },
+    { type: 'TXT', value: 'v=spf1 include:_spf...', ttl: '3600' },
+    { type: 'CNAME', value: 'dkim._domainkey', ttl: '1800' },
   ]
-  return (
-    <div className='relative flex h-full w-full flex-col justify-between p-7 overflow-hidden'>
-      <div
-        className='pointer-events-none absolute inset-0'
-        style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 30%, rgba(16,185,129,0.08), transparent 65%)' }}
-        aria-hidden
-      />
-      <div className='relative flex items-center justify-between'>
-        <div className='flex items-center gap-3'>
-          <div className='flex h-8 w-8 items-center justify-center rounded-full border border-[#5747ff]/40 bg-[#5747ff]/15'>
-            <Send className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
-          </div>
-          <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>Deliverability</span>
-        </div>
-        <motion.span
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, type: 'spring', stiffness: 300 }}
-          className='font-general-sans text-2xl font-semibold text-emerald-400'
-        >
-          97.3%
-        </motion.span>
-      </div>
-
-      <div className='relative space-y-1.5'>
-        <div className='mb-3'>
-          <div className='mb-2 flex justify-between'>
-            <span className='font-mono text-[9px] uppercase tracking-wider text-white/25'>Inbox rate</span>
-            <span className='font-mono text-[9px] text-white/25'>97 / 100</span>
-          </div>
-          <div className='h-1.5 overflow-hidden rounded-full bg-white/[0.06]'>
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '97%' }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.2, ease: 'easeOut' }}
-              className='h-full rounded-full bg-gradient-to-r from-[#5747ff] to-emerald-400'
-            />
-          </div>
-        </div>
-
-        {clients.map(({ name, mboxes, initials }, i) => (
-          <motion.div
-            key={name}
-            initial={{ opacity: 0, x: -8 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
-            className='flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2.5'
-          >
-            <div className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5747ff]/25'>
-              <span className='font-mono text-[9px] font-medium text-[#8b7fff]'>{initials}</span>
-            </div>
-            <span className='flex-1 font-mono text-[11px] text-white/55'>{name}</span>
-            <span className='font-mono text-[10px] text-white/25'>{mboxes}</span>
-            <motion.span
-              animate={{ opacity: [1, 0.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
-              className='h-1.5 w-1.5 rounded-full bg-emerald-400'
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function EarnPanel() {
-  const SPARK = [30, 45, 38, 60, 52, 70, 80, 100]
   return (
     <div className='relative flex h-full w-full flex-col justify-between p-7 overflow-hidden'>
       <div
@@ -233,43 +212,40 @@ function EarnPanel() {
       />
       <div className='relative flex items-center gap-3'>
         <div className='flex h-8 w-8 items-center justify-center rounded-full border border-[#5747ff]/40 bg-[#5747ff]/15'>
-          <TrendingUp className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
+          <Database className='h-4 w-4 text-[#8b7fff]' strokeWidth={1.5} />
         </div>
-        <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>Monthly Revenue</span>
+        <span className='font-mono text-[10px] uppercase tracking-widest text-white/35'>DNS · Mailboxes</span>
       </div>
 
-      <div className='relative'>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className='font-general-sans text-[3rem] font-semibold leading-none tracking-[-0.04em] text-white'
-        >
-          $4,800
-        </motion.p>
-        <div className='mt-2 flex items-center gap-2'>
-          <span className='rounded-full bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400'>↑ 32%</span>
-          <span className='font-mono text-[10px] text-white/30'>vs last month</span>
-        </div>
-      </div>
-
-      {/* Bar chart */}
-      <div className='relative flex h-14 items-end gap-[3px]'>
-        {SPARK.map((h, i) => (
+      <div className='relative space-y-1.5'>
+        <p className='mb-1 font-mono text-[9px] uppercase tracking-wider text-white/25'>Records</p>
+        {records.map(({ type, value, ttl }, i) => (
           <motion.div
-            key={i}
-            initial={{ height: 0, opacity: 0 }}
-            whileInView={{ height: `${h}%`, opacity: 1 }}
+            key={type + value}
+            initial={{ opacity: 0, y: 6 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 + i * 0.07, duration: 0.5, ease: 'easeOut' }}
-            className='flex-1 rounded-[3px]'
-            style={{
-              background: i === SPARK.length - 1 ? '#5747ff' : `rgba(87,71,255,${0.15 + i * 0.09})`,
-              boxShadow: i === SPARK.length - 1 ? '0 0 12px rgba(87,71,255,0.5)' : 'none',
-            }}
-          />
+            transition={{ delay: 0.2 + i * 0.1, duration: 0.4 }}
+            className='flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2'
+          >
+            <span className='w-12 shrink-0 rounded bg-[#5747ff]/15 px-1.5 py-0.5 text-center font-mono text-[9px] font-medium text-[#8b7fff]'>
+              {type}
+            </span>
+            <span className='min-w-0 flex-1 truncate font-mono text-[10px] text-white/50'>{value}</span>
+            <span className='font-mono text-[9px] text-white/20'>{ttl}</span>
+          </motion.div>
         ))}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.55 }}
+          className='mt-2 flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2.5'
+        >
+          <span className='font-mono text-[10px] text-white/45'>Active mailboxes</span>
+          <span className='font-mono text-[12px] font-medium text-white'>1,240</span>
+        </motion.div>
       </div>
 
       <div className='relative flex items-center gap-2'>
@@ -278,13 +254,13 @@ function EarnPanel() {
           transition={{ duration: 2, repeat: Infinity, delay: 1 }}
           className='h-1.5 w-1.5 rounded-full bg-emerald-400'
         />
-        <span className='font-mono text-[10px] text-white/35'>120 mailboxes × $40/mo avg price</span>
+        <span className='font-mono text-[10px] text-white/35'>CRUD every record & mailbox via API</span>
       </div>
     </div>
   )
 }
 
-const PANELS = [SignUpPanel, CustomizePanel, SellPanel, EarnPanel]
+const PANELS = [ApiPanel, WarmupPanel, PrewarmupPanel, ManagePanel]
 
 /* ── Step nav tab ──────────────────────────────────────── */
 
@@ -375,10 +351,10 @@ export function WebsiteInLeadsOut() {
             id='heading-website-leads'
             className='font-general-sans text-[clamp(1.875rem,3.5vw,2.75rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white'
           >
-            Partner up.
+            One API.
           </h2>
           <h2 className='font-general-sans text-[clamp(1.875rem,3.5vw,2.75rem)] font-medium leading-[1.05] tracking-[-0.03em] bg-clip-text text-transparent bg-[linear-gradient(220deg,#FFF_6%,#c4b5ff_25%,#5747ff_95%)]'>
-            Profit out.
+            Full control.
           </h2>
         </div>
 
@@ -433,12 +409,12 @@ export function WebsiteInLeadsOut() {
                 }}
               >
                 <div className='overflow-hidden rounded-2xl bg-[#0a0a12] flex min-h-[52vh]'>
-                  {/* Visual panel — left half */}
+                  {/* Visual panel - left half */}
                   <div className='relative hidden flex-shrink-0 overflow-hidden border-r border-white/[0.05] md:block' style={{ width: '50%' }}>
                     {Panel && <Panel />}
                   </div>
 
-                  {/* Text panel — right half */}
+                  {/* Text panel - right half */}
                   <div className='relative flex flex-1 flex-col justify-between p-8'>
                     {/* Inner glow */}
                     <div

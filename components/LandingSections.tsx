@@ -12,57 +12,52 @@ import { WebsiteInLeadsOut } from '@/components/landing/WebsiteInLeadsOut'
 import { CommonQuestionsSection } from '@/components/landing/CommonQuestionsSection'
 import { CompareTable } from '@/components/landing/CompareTable'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
-import { APP_GET_STARTED_URL } from '@/lib/appUrls'
+import { APP_DOCS_URL } from '@/lib/appUrls'
 import { cn } from '@/lib/utils'
 
-/** Figma 651:2505 — stat strip below compare table */
+/** Feature stats below compare table */
 function CompareStatStrip() {
   return (
     <div
       className='mt-10 flex items-end justify-between md:mt-12 lg:mt-14'
       data-node-id='651:2505'
     >
-      {/* Left: two big stat blocks */}
       <div className='flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20'>
-        {/* 92% */}
         <div className='flex flex-col gap-2'>
           <p className='font-sans text-[10px] sm:text-xs font-normal leading-[18px] text-[color:var(--Neutral-600,#a3a3a3)]'>
-            Up to
+            Inbox rate
           </p>
           <p className='font-sans text-[clamp(2rem,5.5vw,4.5rem)] font-medium leading-none tracking-[-0.04em] text-white'>
-            10x
+            99.1%
           </p>
           <p className='font-sans text-[10px] sm:text-xs font-normal leading-[18px] text-[color:var(--Neutral-600,#a3a3a3)]'>
-            ROI on your investment
+            across Google & M365
           </p>
         </div>
 
-        {/* $6,001 */}
         <div className='flex flex-col gap-2'>
           <p className='font-sans text-[10px] sm:text-xs font-normal leading-[18px] text-[color:var(--Neutral-600,#a3a3a3)]'>
-            Avg. partner earns
+            Time to launch
           </p>
           <div className='flex items-end gap-2'>
             <p className='font-sans text-[clamp(2rem,5.5vw,4.5rem)] font-medium leading-none tracking-[-0.04em] text-white'>
-              $9,600
-            </p>
-            <p className='mb-[5px] font-sans text-[10px] sm:text-xs font-normal leading-[18px] text-[color:var(--Neutral-600,#a3a3a3)]'>
-              /year
+              ~24h
             </p>
           </div>
           <p className='font-sans text-[10px] sm:text-xs font-normal leading-[18px] text-[color:var(--Neutral-600,#a3a3a3)]'>
-            in recurring revenue
+            domains, DNS & mailboxes live
           </p>
         </div>
       </div>
 
-      {/* Right: SEE PRICING link */}
       <a
-        href={APP_GET_STARTED_URL}
+        href={APP_DOCS_URL}
+        target='_blank'
+        rel='noopener noreferrer'
         className='inline-flex items-center gap-1 p-3 font-mono text-sm font-normal leading-[1.4] tracking-[-0.02em] text-[color:var(--Primary-500,#5747ff)] transition-opacity hover:opacity-80'
         style={{ fontFeatureSettings: "'ss05' 1" }}
       >
-        SEE PRICING
+        VIEW DOCS
         <svg width='18' height='18' viewBox='0 0 18 18' fill='none' aria-hidden>
           <path
             d='M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5'
@@ -113,14 +108,14 @@ export function LandingSections() {
 
       <SectionBreak />
 
-      {/* Infra section — "Provision, warm, and scale" */}
+      {/* Infra section - "Provision, warm, and scale" */}
       <SectionShell id='infra' labelledBy='heading-infra' className='bg-black'>
         <InfraSection />
       </SectionShell>
 
       <SectionBreak />
 
-      {/* How to buy — scroll-driven pipeline */}
+      {/* How to buy - scroll-driven pipeline */}
       <SectionShell id='how-to-buy' labelledBy='heading-how-to-buy' className='bg-black'>
         <HowToBuySection />
       </SectionShell>
@@ -132,7 +127,7 @@ export function LandingSections() {
 
       <SectionBreak />
 
-      {/* 654:3033 ×6 — background feature grid + illustrations */}
+      {/* 654:3033 ×6 - background feature grid + illustrations */}
       <SectionShell id='how-it-works' labelledBy='heading-background'>
         <ScrollReveal delayMs={40}>
           <div className='flex flex-col pt-20 pb-12 md:pt-8 md:pb-8 lg:pt-8 lg:pb-8'>

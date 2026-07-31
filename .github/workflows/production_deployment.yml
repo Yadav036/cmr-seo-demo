@@ -10,11 +10,11 @@ jobs:
     runs-on: production
     steps:
       # Step 1: Checkout the code
-      - name: Checkout Code
+     - name: Checkout Code
         uses: actions/checkout@v3
 
       # Step 2: Set up SSH keys for deployment
-      - name: Set up SSH keys
+     - name: Set up SSH keys
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.BIG_ANALYTICS_SERVER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
@@ -23,7 +23,7 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
 
       # Step 3: Run deployment commands via SSH
-      - name: Deploy Application
+     - name: Deploy Application
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: "100.104.247.118"
@@ -44,7 +44,7 @@ jobs:
     needs: deploy
     runs-on: self-hosted
     steps:
-      - name: Resolve zone and purge cache
+     - name: Resolve zone and purge cache
         env:
           CF_TOKEN: ${{ secrets.CF_CACHE_PURGE_TOKEN }}
           HOST: coldmailreseller.com
@@ -109,7 +109,7 @@ jobs:
     runs-on: self-hosted
     if: always() && needs.deploy.result != 'skipped'
     steps:
-      - name: Send Slack notification
+     - name: Send Slack notification
         env:
           DEPLOY_RESULT: ${{ needs.deploy.result }}
           PURGE_RESULT: ${{ needs.purge-cache.result }}
@@ -126,7 +126,7 @@ jobs:
             TEXT="✅ *Production Deploy Successful*"
           elif [ "$DEPLOY_RESULT" = "success" ] && [ "$PURGE_RESULT" != "success" ]; then
             COLOR="warning"
-            TEXT="⚠️ *Production Deploy Successful — Cache Purge Failed*"
+            TEXT="⚠️ *Production Deploy Successful - Cache Purge Failed*"
           else
             COLOR="danger"
             TEXT="❌ *Production Deploy Failed*"

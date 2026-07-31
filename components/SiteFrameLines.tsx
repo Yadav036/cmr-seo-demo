@@ -7,7 +7,7 @@ const FRAME_INSET = 60
 const HEADER_SELECTOR = '[data-site-header]'
 const HERO_SELECTOR = '[data-site-hero]'
 
-/** Figma 661:3959 — stroke-dasharray 8 4, color #303030 */
+/** Figma 661:3959 - stroke-dasharray 8 4, color #303030 */
 const dottedStyle: CSSProperties = {
   backgroundImage: `repeating-linear-gradient(
     to bottom,

@@ -11,30 +11,34 @@ export type WebsiteInLeadsStep = {
 export const WEBSITE_IN_LEADS_STEPS: WebsiteInLeadsStep[] = [
   {
     badge: '01',
-    tabLabel: 'Sign Up',
-    title: 'Start in minutes',
-    description: 'One click to create your account—no lengthy approvals or complex onboarding.',
+    tabLabel: 'API',
+    title: 'Provision with one API call',
+    description:
+      'Domains, DNS, Google & Microsoft mailboxes - create, update, and track everything through a single REST API.',
     visual: 'figma-step1',
   },
   {
     badge: '02',
-    tabLabel: 'Customize',
-    title: 'Make it yours',
-    description: 'Add your logo, set your pricing, and build the client experience you want.',
+    tabLabel: 'Warmups',
+    title: 'Warmup that stays on',
+    description:
+      'Enable, tune, and monitor mailbox warmup via API. Keep inbox placement healthy without babysitting settings.',
     visual: 'accent',
   },
   {
     badge: '03',
-    tabLabel: 'Sell',
-    title: 'Start delivering results',
-    description: 'Onboard clients, provision mailboxes, and watch your deliverability shine.',
+    tabLabel: 'Pre-warmups',
+    title: 'Ship reputation-ready inboxes',
+    description:
+      'Order pre-warmed mailboxes with reputation already baked in - ready to send from day one, not day fourteen.',
     visual: 'accent',
   },
   {
     badge: '04',
-    tabLabel: 'Earn',
-    title: 'Collect recurring revenue',
-    description: 'Every mailbox you manage is steady monthly income. Scale at your own pace.',
+    tabLabel: 'Manage',
+    title: 'Records & mailbox data, unified',
+    description:
+      'DNS records, domains, subscriptions, and mailbox details - read and write the full stack from one control plane.',
     visual: 'accent',
   },
 ]

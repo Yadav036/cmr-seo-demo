@@ -13,22 +13,34 @@ type Cell =
 
 const ROWS: { label: string; google: Cell; sdr: Cell; cmr: Cell }[] = [
   {
-    label: 'Monthly platform cost',
-    google: { type: 'text', value: '~$500+' },
-    sdr: { type: 'text', value: '~$300+' },
-    cmr: { type: 'text', value: '$149+', accent: true },
+    label: 'Full REST API',
+    google: { type: 'partial', value: 'Partial' },
+    sdr: { type: 'x' },
+    cmr: { type: 'check' },
   },
   {
-    label: 'Mailboxes included',
-    google: { type: 'text', value: '5–10' },
-    sdr: { type: 'text', value: '20–30' },
-    cmr: { type: 'text', value: 'Unlimited', accent: true },
+    label: 'Mailbox warmup',
+    google: { type: 'partial', value: 'Manual' },
+    sdr: { type: 'partial', value: 'Limited' },
+    cmr: { type: 'check' },
   },
   {
-    label: 'Time to launch',
-    google: { type: 'text', value: '2–4 weeks' },
-    sdr: { type: 'text', value: '5–7 days' },
-    cmr: { type: 'text', value: '~24 hours', accent: true },
+    label: 'Pre-warmed mailboxes',
+    google: { type: 'x' },
+    sdr: { type: 'x' },
+    cmr: { type: 'check' },
+  },
+  {
+    label: 'DNS & record management',
+    google: { type: 'partial', value: 'Manual' },
+    sdr: { type: 'partial', value: 'Limited' },
+    cmr: { type: 'check' },
+  },
+  {
+    label: 'Mailbox data control',
+    google: { type: 'partial', value: 'Partial' },
+    sdr: { type: 'partial', value: 'Limited' },
+    cmr: { type: 'check' },
   },
   {
     label: 'White-label branding',
@@ -37,20 +49,14 @@ const ROWS: { label: string; google: Cell; sdr: Cell; cmr: Cell }[] = [
     cmr: { type: 'check' },
   },
   {
-    label: 'Custom pricing control',
-    google: { type: 'x' },
-    sdr: { type: 'x' },
-    cmr: { type: 'check' },
+    label: 'Time to launch',
+    google: { type: 'text', value: '2-4 weeks' },
+    sdr: { type: 'text', value: '5-7 days' },
+    cmr: { type: 'text', value: '~24 hours', accent: true },
   },
   {
     label: 'Scales instantly',
     google: { type: 'partial', value: 'Partial' },
-    sdr: { type: 'x' },
-    cmr: { type: 'check' },
-  },
-  {
-    label: 'Zero technical setup',
-    google: { type: 'x' },
     sdr: { type: 'x' },
     cmr: { type: 'check' },
   },
@@ -118,7 +124,7 @@ export function CompareTable({ className }: { className?: string }) {
                   DIY Email Setup
                 </span>
                 <span className='max-w-[12rem] font-sans text-xs font-normal leading-[1.35] text-[color:var(--Neutral-500,#737373)]'>
-                  Complex infra, constant maintenance
+                  Manual DNS, no API, no warmup
                 </span>
               </div>
             </th>
@@ -131,7 +137,7 @@ export function CompareTable({ className }: { className?: string }) {
                   Other Resellers
                 </span>
                 <span className='max-w-[12rem] font-sans text-xs font-normal leading-[1.35] text-[color:var(--Neutral-500,#737373)]'>
-                  Limited features, no white-label
+                  Thin APIs, limited infrastructure
                 </span>
               </div>
             </th>
@@ -144,7 +150,7 @@ export function CompareTable({ className }: { className?: string }) {
                   <Logo />
                 </div>
                 <span className='max-w-[14rem] font-sans text-xs font-normal leading-[1.35] text-[color:var(--Neutral-500,#737373)]'>
-                  White-label. Scalable. Yours.
+                  API. Warmup. Full control.
                 </span>
               </div>
             </th>

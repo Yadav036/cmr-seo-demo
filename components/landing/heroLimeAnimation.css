@@ -1,4 +1,4 @@
-/* hero lime animation — scoped for HeroLimeAnimation */
+/* hero lime animation - scoped for HeroLimeAnimation */
 .hero-lime-scope {
   --hl-a: #5747ff;
   --hl-a2: rgba(183, 246, 1, 0.1);
@@ -31,7 +31,7 @@
   overflow: hidden;
 }
 
-/* Hero: fit beside headline in one viewport — tighter chrome, slight scale */
+/* Hero: fit beside headline in one viewport - tighter chrome, slight scale */
 .hero-lime-scope.hero-lime-scope--compact .hl-root {
   padding: 20px 14px 32px;
   transform: scale(0.93);

@@ -11,12 +11,12 @@ const MAX = 50
 /** Scale labels every 10 (plus min at 1) */
 const TICKS = [1, 10, 20, 30, 40, 50] as const
 
-/** 0–100 along the track, matching `<input type="range" min max />` thumb position */
+/** 0-100 along the track, matching `<input type="range" min max />` thumb position */
 function tickPercent(t: number) {
   return ((t - MIN) / (MAX - MIN)) * 100
 }
 
-/** Figma 644:1877 — monthly leads slider + display + SEE PRICING */
+/** Figma 644:1877 - monthly leads slider + display + SEE PRICING */
 export function MonthlyLeadsSliderCard({
   className,
   value,

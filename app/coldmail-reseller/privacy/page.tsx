@@ -8,7 +8,7 @@ import {
 } from '@/components/cmr/CmrLegalPage'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Cold Mail Reseller',
+  title: 'Privacy Policy - Cold Mail Reseller',
   description:
     'Privacy Policy for Cold Mail Reseller, the white-label email infrastructure service by Outbox Labs Inc.',
 }

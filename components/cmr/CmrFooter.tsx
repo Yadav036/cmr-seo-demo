@@ -1,6 +1,6 @@
 import { Logo } from '@/components/svg/Logo'
 
-const BOOK_A_CALL_URL = 'https://calendly.com/coldmailreseller'
+const BOOK_A_CALL_URL = 'https://cal.com/team/outbox/cold-mail-reseller'
 
 export function CmrFooter() {
   return (

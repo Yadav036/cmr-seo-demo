@@ -1,6 +1,6 @@
 "use client"
 
-// AsciiArt — "Neon Nebula", made with the 21st.dev ASCII editor and baked
+// AsciiArt - "Neon Nebula", made with the 21st.dev ASCII editor and baked
 // to its exact rendered output (looping video + poster). Zero dependencies:
 // one <video> that fills its parent. Drop it behind or inside your content:
 // <div className="relative h-96"><AsciiArt className="absolute inset-0" /></div>
@@ -16,7 +16,7 @@ export function AsciiArt({ className }: { className?: string }) {
       loop
       muted
       playsInline
-      aria-label={"Neon Nebula — animated ASCII art"}
+      aria-label={"Neon Nebula - animated ASCII art"}
       style={{
         display: "block",
         width: "100%",

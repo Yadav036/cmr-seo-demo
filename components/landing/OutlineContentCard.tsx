@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 /**
- * Figma 619:537 — white outline, px 19 / py 20, column gap 10px
+ * Figma 619:537 - white outline, px 19 / py 20, column gap 10px
  */
 type OutlineContentCardProps = {
   children: ReactNode
@@ -32,7 +32,7 @@ type OutlineTextBlockProps = {
   className?: string
 }
 
-/** Figma 619:610 — title + body with 6px gap */
+/** Figma 619:610 - title + body with 6px gap */
 export function OutlineTextBlock({
   title,
   description,

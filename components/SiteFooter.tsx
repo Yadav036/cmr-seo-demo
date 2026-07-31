@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
 
 import { Logo } from '@/components/svg/Logo'
 import {
@@ -72,15 +71,8 @@ export function SiteFooter({ className }: { className?: string }) {
           </nav>
         </div>
 
-        <div className='mt-12 flex flex-col gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-center sm:justify-between'>
-          <a
-            href='mailto:hello@coldmailreseller.com'
-            className='inline-flex items-center gap-2 font-sans text-xs font-normal leading-[1.4] text-[color:var(--Neutral-500,#737373)] transition-colors hover:text-white'
-          >
-            <Mail className='size-4 shrink-0' strokeWidth={1.5} aria-hidden />
-            hello@coldmailreseller.com
-          </a>
-          <p className='font-sans text-xs font-normal leading-[1.4] text-[color:var(--Neutral-500,#737373)] sm:text-right'>
+        <div className='mt-12 border-t border-white/[0.06] pt-8'>
+          <p className='font-sans text-xs font-normal leading-[1.4] text-[color:var(--Neutral-500,#737373)]'>
             © {new Date().getFullYear()} Outbox Labs Inc. All rights reserved.
           </p>
         </div>

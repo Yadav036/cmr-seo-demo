@@ -298,7 +298,7 @@ export function InfraSection() {
           <div className='mt-auto pt-7'>
             <h3 className='font-general-sans text-lg font-medium text-white'>Deliverability You Can See</h3>
             <p className='mt-2 text-sm leading-relaxed text-white/45'>
-              Inbox placement, bounce rates, and blacklist status — tracked live, surfaced before reply rates flatline.
+              Inbox placement, bounce rates, and blacklist status - tracked live, surfaced before reply rates flatline.
             </p>
           </div>
         </Card>

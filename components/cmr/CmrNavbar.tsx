@@ -1,9 +1,10 @@
 'use client'
 
-import { Menu, X } from 'lucide-react'
+import { BookOpen, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { Logo } from '@/components/svg/Logo'
+import { APP_DOCS_URL } from '@/lib/appUrls'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
@@ -12,8 +13,8 @@ const NAV_LINKS = [
   { href: '/coldmail-reseller#faqs', label: 'FAQs' },
 ] as const
 
-const BOOK_A_CALL_URL = 'https://calendly.com/coldmailreseller'
-const LOGIN_URL = 'https://app.coldmailreseller.com/login'
+const BOOK_A_CALL_URL = 'https://cal.com/team/outbox/cold-mail-reseller'
+const LOGIN_URL = 'https://partners.coldmailreseller.com/signin'
 
 export function CmrNavbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -57,6 +58,22 @@ export function CmrNavbar() {
           </nav>
 
           <div className='flex items-center gap-2'>
+            <a
+              href={APP_DOCS_URL}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group relative inline-flex items-center gap-1.5 overflow-hidden rounded-xl border border-[#5747ff]/40 bg-[#5747ff]/10 px-3.5 py-2 text-sm font-medium text-[#c4b5ff] transition-all hover:border-[#5747ff]/70 hover:bg-[#5747ff]/20 hover:text-white'
+            >
+              <span
+                className='pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(105deg,transparent_40%,rgba(255,255,255,0.12)_50%,transparent_60%)] transition-transform duration-700 group-hover:translate-x-full'
+                aria-hidden
+              />
+              <BookOpen className='size-3.5 shrink-0' strokeWidth={1.75} />
+              Docs
+              <span className='rounded-md bg-[#5747ff]/25 px-1.5 py-px text-[10px] font-medium uppercase tracking-wider text-[#8b7fff]'>
+                API
+              </span>
+            </a>
             <a
               href={LOGIN_URL}
               className='rounded-lg px-4 py-2 text-sm text-white/60 transition-colors hover:text-white'
@@ -103,7 +120,7 @@ export function CmrNavbar() {
       <div
         className={cn(
           'overflow-hidden transition-all duration-300 md:hidden',
-          mobileOpen ? 'max-h-[380px]' : 'max-h-0',
+          mobileOpen ? 'max-h-[440px]' : 'max-h-0',
         )}
       >
         <div className='flex flex-col gap-1 border-t border-white/5 bg-[#07050f] px-5 py-4'>
@@ -118,6 +135,19 @@ export function CmrNavbar() {
             </a>
           ))}
           <div className='mt-3 flex flex-col gap-2 border-t border-white/5 pt-3'>
+            <a
+              href={APP_DOCS_URL}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center justify-center gap-1.5 rounded-xl border border-[#5747ff]/40 bg-[#5747ff]/10 px-4 py-2.5 text-sm font-medium text-[#c4b5ff]'
+              onClick={() => setMobileOpen(false)}
+            >
+              <BookOpen className='size-3.5' strokeWidth={1.75} />
+              Docs
+              <span className='rounded-md bg-[#5747ff]/25 px-1.5 py-px text-[10px] font-medium uppercase tracking-wider text-[#8b7fff]'>
+                API
+              </span>
+            </a>
             <a
               href={LOGIN_URL}
               className='rounded-lg border border-white/10 px-4 py-2.5 text-center text-sm text-white/80'

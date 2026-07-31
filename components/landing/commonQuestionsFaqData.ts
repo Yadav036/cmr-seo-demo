@@ -6,37 +6,37 @@ export type CommonQuestionsFaqEntry = {
 }
 
 export const QUALIFIED_LEAD_DISCLAIMER =
-  `White-label means your clients see only your brand—never ours.`
+  `White-label means your clients see only your brand, never ours.`
 
 export const COMMON_QUESTIONS_FAQ_ITEMS: CommonQuestionsFaqEntry[] = [
   {
     id: 'qualified-lead',
     question: 'What is Cold Mail Reseller?',
     answer:
-      'Cold Mail Reseller is a white-label email infrastructure platform. You resell our deliverability infrastructure under your own brand, set your own pricing, and keep the recurring revenue.',
+      "Cold Mail Reseller is email infrastructure you can run under your own brand. You get a full REST API and a white-label dashboard to provision domains, DNS, warmups, pre-warmups, and mailboxes, then deliver that stack to your clients as your product.",
   },
   {
     id: 'control-sent',
-    question: 'How much can I earn as a partner?',
+    question: 'How much can I earn as a Cold Mail Reseller Partner?',
     answer:
-      'Your income scales with the number of mailboxes you manage. At $8 profit per mailbox with 100 clients, that\'s $800/month. Scale to 1,000 mailboxes and you\'re earning $8,000/month in recurring revenue.',
+      'Partners typically earn 30-50% margins on each mailbox. With flexible pricing, you set your own rates while staying competitive, backed by infrastructure you control through our API and white-label dashboard.',
   },
   {
     id: 'no-leads',
     question: 'Do I need technical expertise to get started?',
     answer:
-      'Not at all. We handle DNS setup, IP warm-up, deliverability optimization, and infrastructure management. You just sign up, add your branding, and start selling.',
+      'No. Automated setup handles DKIM, SPF, and DMARC for you. Prefer to integrate yourself? Use the API. Prefer a UI? Use the white-label dashboard. Either path gets you live without deep infra expertise.',
   },
   {
     id: 'vs-sdr',
-    question: 'How does white labeling work?',
+    question: 'How does White Labeling work?',
     answer:
-      'Your clients see your logo, your domain, and your name—never ours. You configure the storefront, set your pricing, and all the credit goes to your business.',
+      'Customize the entire experience with your brand, including the white-label dashboard, documentation, and support materials. Your clients only see your brand. You can also build on top of our APIs so every flow stays native to your product.',
   },
   {
     id: 'technical-setup',
-    question: 'What support do I receive as a partner?',
+    question: 'What support do I receive as a Cold Mail Reseller Partner?',
     answer:
-      'You get dedicated onboarding, round-the-clock partner support, marketing resources, and continuous platform improvements. We succeed only when you do.',
+      'Partners get dedicated support, marketing materials, full API documentation, white-label dashboard guidance, and regular training so you can ship and scale with confidence.',
   },
 ]

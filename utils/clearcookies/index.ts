@@ -8,7 +8,7 @@ export const clearCookies = (path?: string, shouldRedirect: boolean = true) => {
       Cookies.remove(cookie);
     }
   }
-  // Gleap is browser-only — load lazily so it never runs during SSR
+  // Gleap is browser-only - load lazily so it never runs during SSR
   if (typeof window !== "undefined") {
     import("gleap")
       .then(({ default: Gleap }) => Gleap.clearIdentity())

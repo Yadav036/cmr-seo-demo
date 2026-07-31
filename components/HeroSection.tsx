@@ -264,7 +264,7 @@ function DashboardCard() {
             <div className='grid grid-cols-3 gap-2'>
               {[
                 { label: 'Total mailboxes', value: '120' },
-                { label: 'Avg inbox rate', value: '97.5%', accent: true },
+                { label: 'Avg inbox rate', value: '99.1%', accent: true },
                 { label: 'Active clients', value: '5' },
               ].map(({ label, value, accent }) => (
                 <div key={label} className='flex flex-col items-center rounded-xl bg-white/[0.03] py-2.5 px-2 gap-1'>
@@ -337,7 +337,7 @@ export function HeroSection() {
             </h1>
 
             <p className='mt-6 max-w-[38ch] font-general-sans text-base text-white/50 leading-relaxed'>
-              Domains, DNS, and Google & Microsoft mailboxes — white-labeled. You keep every dollar.
+              Domains, DNS, and Google & Microsoft mailboxes - white-labeled. You keep every dollar.
             </p>
 
             <div className='mt-8 flex flex-wrap items-center gap-3'>
@@ -356,22 +356,6 @@ export function HeroSection() {
               >
                 See How It Works
               </a>
-            </div>
-
-            <div className='mt-8 flex flex-wrap items-center gap-x-6 gap-y-3'>
-              {[
-                { value: '97.3%', label: 'Inbox rate' },
-                { value: '$9,600', label: 'Avg partner / yr' },
-                { value: '10x', label: 'Avg ROI' },
-              ].map(({ value, label }, i) => (
-                <div key={label} className='flex items-center gap-6'>
-                  {i > 0 && <div className='h-8 w-px bg-white/10' />}
-                  <div className='flex flex-col'>
-                    <span className='font-general-sans text-2xl font-medium text-white tracking-tight'>{value}</span>
-                    <span className='font-mono text-[10px] text-white/35 uppercase tracking-wider'>{label}</span>
-                  </div>
-                </div>
-              ))}
             </div>
 
             {/* API teaser */}

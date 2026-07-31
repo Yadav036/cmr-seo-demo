@@ -28,7 +28,7 @@ const steps = [
   {
     n: '05',
     title: 'Your clients go live',
-    body: 'Hand over their branded dashboard. They see your brand, your support, your domain — never ours.',
+    body: 'Hand over their branded dashboard. They see your brand, your support, your domain - never ours.',
   },
   {
     n: '06',
@@ -47,7 +47,7 @@ function PurchasePipeline() {
 
   return (
     <div ref={ref} className='relative mt-14'>
-      {/* Scroll-driven vertical line — base track */}
+      {/* Scroll-driven vertical line - base track */}
       <div className='pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-white/[0.06] md:block' aria-hidden />
       {/* Animated fill using scaleY from top */}
       <motion.div

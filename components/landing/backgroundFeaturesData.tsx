@@ -6,7 +6,7 @@ export type BackgroundFeatureItem = {
   imageSrc: string
 }
 
-/** Six cards for “Everything runs in the background” — uses `B2B_FEATURES` image paths */
+/** Six cards for “Everything runs in the background” - uses `B2B_FEATURES` image paths */
 export const BACKGROUND_FEATURES: BackgroundFeatureItem[] = B2B_FEATURES.map(
   (item) => ({
     title: item.title,

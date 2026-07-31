@@ -15,18 +15,18 @@ import { CmrProfitCalculator } from '@/components/cmr/CmrProfitCalculator'
 import { CmrFaqAccordion } from '@/components/cmr/CmrFaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Cold Mail Reseller — White-Label Email Infrastructure',
+  title: 'Cold Mail Reseller - White-Label Email Infrastructure',
   description:
     'Launch your own white-label cold email infrastructure platform. Help your clients land in the inbox every time while building predictable, recurring revenue.',
 }
 
-const BOOK_A_CALL_URL = 'https://calendly.com/coldmailreseller'
+const BOOK_A_CALL_URL = 'https://cal.com/team/outbox/cold-mail-reseller'
 
 const FEATURES = [
   {
     icon: InboxIcon,
     title: 'Seamless Deliverability',
-    desc: 'Say goodbye to spam folders—our platform ensures emails land where they matter.',
+    desc: 'Say goodbye to spam folders. Our platform ensures emails land where they matter.',
   },
   {
     icon: TrendingUpIcon,
@@ -59,7 +59,7 @@ const STEPS = [
   {
     n: '1',
     title: 'Sign Up',
-    desc: 'Your journey starts with a single click—no lengthy setups or approvals.',
+    desc: 'Your journey starts with a single click. No lengthy setups or approvals.',
   },
   {
     n: '2',
@@ -209,7 +209,7 @@ export default function ColdMailResellerPage() {
           </div>
 
           <div className='relative grid gap-0 sm:grid-cols-3'>
-            {/* Connector lines — sit behind the circles */}
+            {/* Connector lines - sit behind the circles */}
             <div
               className='pointer-events-none absolute top-6 left-[calc(100%/6)] right-[calc(100%/6)] hidden h-px sm:block'
               aria-hidden
@@ -276,16 +276,6 @@ export default function ColdMailResellerPage() {
           </div>
 
           <CmrFaqAccordion />
-
-          <p className='mt-8 text-center text-sm text-white/40'>
-            Still have questions?{' '}
-            <a
-              href={`mailto:hello@coldmailreseller.com`}
-              className='text-[#9b90ff] underline underline-offset-2 transition-colors hover:text-[#5747ff]'
-            >
-              Contact us!
-            </a>
-          </p>
         </div>
       </section>
 

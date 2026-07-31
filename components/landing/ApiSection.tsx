@@ -49,7 +49,7 @@ const RESPONSE_LINES = [
 ]
 
 const FEATURES = [
-  { icon: '⚡', title: 'Provision instantly', body: 'One API call creates domains, DNS records, mailboxes, and starts warmup — no manual steps.' },
+  { icon: '⚡', title: 'Provision instantly', body: 'One API call creates domains, DNS records, mailboxes, and starts warmup - no manual steps.' },
   { icon: '🔑', title: 'Full white-label', body: 'All mailboxes provision under your brand. Your clients never see our infrastructure.' },
   { icon: '📊', title: 'Real-time webhooks', body: 'Get notified on provisioning complete, warmup progress, and deliverability events.' },
   { icon: '🔒', title: 'OAuth + API keys', body: 'Secure auth with scoped API keys. Integrate into any sequencer or CRM in minutes.' },
@@ -127,7 +127,7 @@ export function ApiSection() {
             </h2>
 
             <LineReveal delay={0.5} className='mt-5 max-w-[40ch] font-general-sans text-base leading-relaxed text-white/50'>
-              Provision domains, configure DNS, spin up warmed mailboxes, and export to your sequencer — all programmatically. Build cold email infrastructure into your own platform.
+              Provision domains, configure DNS, spin up warmed mailboxes, and export to your sequencer - all programmatically. Build cold email infrastructure into your own platform.
             </LineReveal>
 
             {/* Feature grid */}
